@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CFECFA"
+    tools:context=".FeesScreen">
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="76dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#CFECFA"
+        android:foreground="@drawable/backbutton1"
+        android:foregroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/xhaw5112_logo" />
+
+    <Button
+        android:id="@+id/contactButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BD3B36"
+        android:text="Contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:background="#1D4BDD"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Enter Name"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/numberEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/numberEditText"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:background="#1D4BDD"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Enter Phone Number"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:background="#1D4BDD"
+        android:backgroundTint="#1D4BDD"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Enter Email Address"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.372" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="350dp"
+        android:layout_height="295dp"
+        android:background="#1D4BDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Six Week Courses"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/childMindingBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Child Minding Fees R750"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/cookingBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cooking Fees R750"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/gardenMaintenanceBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Garden Maintenance Fees R750"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Six Month Courses"
+                android:textColor="#F6F6F6"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/firstAidBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Aid Fees R1500"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/sewingBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sewing Fees R1500"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/landscapingBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Landscaping Fees R1500"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/lifeSkillsBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Life Skills Fees R1500"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/totalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BD3B36"
+        android:text="Total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="125dp"
+        android:layout_height="66dp"
+        android:background="#1D4BDD"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.51" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
