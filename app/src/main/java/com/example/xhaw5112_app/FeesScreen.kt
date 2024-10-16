@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
+import kotlin.time.times
 
 class FeesScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,14 +40,16 @@ class FeesScreen : AppCompatActivity() {
         val sewing:Int = 1500
         val landscaping:Int = 1500
         val lifeSkills:Int = 1500
+        var added:Int = 0
         var total: Int= 0
+        var totalWithDisc: Int= 0
 
 
 
 
 
         childmindingBox.setOnClickListener{
-            total += childMinding
+            added += childMinding
 
         }
 
@@ -80,7 +83,48 @@ class FeesScreen : AppCompatActivity() {
         }
 
         totalButton.setOnClickListener {
-            totalView.text = "R$total"
+
+            var counter: Int = 0
+
+            if(childmindingBox.isChecked){
+                counter++
+            }
+
+            if(cookingBox.isChecked){
+                counter++
+            }
+
+            if(gardenMaintenanceBox.isChecked){
+                counter++
+            }
+
+            if(firstAidBox.isChecked){
+                counter++
+            }
+
+            if(sewingBox.isChecked){
+                counter++
+            }
+
+            if(landscapingBox.isChecked){
+                counter++
+            }
+
+            if(lifeSkillsBox.isChecked){
+                counter++
+            }
+
+            val discount = when{
+                counter > 3 -> 0.15
+                counter == 3 -> 0.10
+                counter == 2 -> 0.5
+                else -> 0
+            }
+
+
+
+
+
         }
     }
 }
