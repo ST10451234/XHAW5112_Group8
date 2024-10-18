@@ -145,6 +145,7 @@ class FeesScreen : AppCompatActivity() {
             lifeSkillsBox.isChecked = false
             totalView.text = ""
             total = 0
+            selectedCourses.clear()
         }
     }
 }
