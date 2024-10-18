@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CFECFA"
-    tools:context=".MainActivity">
+    tools:context=".Homescreen">
 
     <Button
         android:id="@+id/coursesButton"
@@ -33,17 +33,17 @@
 
     <TextView
         android:id="@+id/homeDisplay"
-        android:layout_width="462dp"
-        android:layout_height="228dp"
+        android:layout_width="413dp"
+        android:layout_height="238dp"
         android:background="#1D4BDD"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.227" />
 
     <Button
         android:id="@+id/contactButton"

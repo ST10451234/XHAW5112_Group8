@@ -48,8 +48,8 @@
 
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="350dp"
-        android:layout_height="85dp"
+        android:layout_width="359dp"
+        android:layout_height="46dp"
         android:background="#1D4BDD"
         android:ems="10"
         android:inputType="text"
@@ -57,15 +57,14 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/numberEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/numberEditText"
-        android:layout_width="350dp"
-        android:layout_height="85dp"
+        android:layout_width="359dp"
+        android:layout_height="46dp"
         android:background="#1D4BDD"
         android:ems="10"
         android:inputType="phone"
@@ -73,15 +72,14 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/emailEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="350dp"
-        android:layout_height="85dp"
+        android:layout_width="359dp"
+        android:layout_height="46dp"
         android:background="#1D4BDD"
         android:backgroundTint="#1D4BDD"
         android:ems="10"
@@ -90,10 +88,9 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.293" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -209,5 +206,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.51" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BD3B36"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <Button
+        android:id="@+id/consultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BD3B36"
+        android:text="Request Consultation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

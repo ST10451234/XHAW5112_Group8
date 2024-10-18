@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class Homescreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_homescreen)
 
         val contactButton = findViewById<Button>(R.id.contactButton)
         val coursesButton = findViewById<Button>(R.id.coursesButton)

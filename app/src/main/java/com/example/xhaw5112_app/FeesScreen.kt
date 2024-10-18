@@ -1,13 +1,13 @@
 package com.example.xhaw5112_app
 
+import android.app.Person
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
-import kotlin.time.times
+import androidx.appcompat.app.AppCompatActivity
 
 class FeesScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,10 +17,16 @@ class FeesScreen : AppCompatActivity() {
 
         val backButton = findViewById<Button>(R.id.backButton)
         val contactButton = findViewById<Button>(R.id.contactButton)
+        val clearButton = findViewById<Button>(R.id.clearButton)
+        val consultButton = findViewById<Button>(R.id.consultButton)
 
         val nameEdit = findViewById<EditText>(R.id.nameEditText)
         val numberEdit = findViewById<EditText>(R.id.numberEditText)
         val emailEdit = findViewById<EditText>(R.id.emailEditText)
+
+        val name = nameEdit.text.toString()
+        val number = numberEdit.text.toString()
+        val email = emailEdit.text.toString()
 
         val totalView = findViewById<TextView>(R.id.totalView)
         val totalButton = findViewById<Button>(R.id.totalButton)
@@ -33,98 +39,108 @@ class FeesScreen : AppCompatActivity() {
         val landscapingBox = findViewById<CheckBox>(R.id.landscapingBox)
         val lifeSkillsBox = findViewById<CheckBox>(R.id.lifeSkillsBox)
 
-        val childMinding:Int = 750
-        val cooking: Int = 750
-        val gardenMaintenance: Int = 750
-        val firstAid:Int = 1500
-        val sewing:Int = 1500
-        val landscaping:Int = 1500
-        val lifeSkills:Int = 1500
-        var added:Int = 0
+        val childMindingPrice:Int = 750
+        val cookingPrice: Int = 750
+        val gardenMaintenancePrice: Int = 750
+        val firstAidPrice:Int = 1500
+        val sewingPrice:Int = 1500
+        val landscapingPrice:Int = 1500
+        val lifeSkillsPrice:Int = 1500
         var total: Int= 0
-        var totalWithDisc: Int= 0
 
+        data class Customer(val name: String, val number: String, val email: String)
 
+        val customerDetails = mutableListOf<Customer>()
 
-
-
-        childmindingBox.setOnClickListener{
-            added += childMinding
+        consultButton.setOnClickListener{
+            if (name.isNotEmpty() && number.isNotEmpty() && email.isNotEmpty())
+            {
+                val newCustomer = Customer(name, number, email)
+                customerDetails.add(newCustomer)
+            }
 
         }
 
-        cookingBox.setOnClickListener{
-            total += cooking
+
+
+
+
+        val selectedCourses = mutableListOf<String>()
+
+        fun updateCourseSelection(checkBox: CheckBox, courseName: String, price: Int) {
+            if (checkBox.isChecked) {
+                total += price
+                selectedCourses.add(courseName) // Add course to selected list
+            } else {
+                total -= price
+                selectedCourses.remove(courseName) // Remove course from selected list
+            }
+
+
         }
 
-        gardenMaintenanceBox.setOnClickListener{
-            total+=gardenMaintenance
+        childmindingBox.setOnClickListener {
+            updateCourseSelection(childmindingBox, "Child Minding", childMindingPrice)
         }
 
-        firstAidBox.setOnClickListener{
-            total+=firstAid
+        cookingBox.setOnClickListener {
+            updateCourseSelection(cookingBox, "Cooking", cookingPrice)
         }
 
-        sewingBox.setOnClickListener{
-            total+=sewing
+        gardenMaintenanceBox.setOnClickListener {
+            updateCourseSelection(gardenMaintenanceBox, "Garden Maintenance", gardenMaintenancePrice)
         }
 
-        landscapingBox.setOnClickListener{
-            total+=landscaping
+        firstAidBox.setOnClickListener {
+            updateCourseSelection(firstAidBox, "First Aid", firstAidPrice)
         }
 
-        lifeSkillsBox.setOnClickListener{
-            total+=lifeSkills
+        sewingBox.setOnClickListener {
+            updateCourseSelection(sewingBox, "Sewing", sewingPrice)
         }
+
+        landscapingBox.setOnClickListener {
+            updateCourseSelection(landscapingBox, "Landscaping", landscapingPrice)
+        }
+
+        lifeSkillsBox.setOnClickListener {
+            updateCourseSelection(lifeSkillsBox, "Life Skills", lifeSkillsPrice)
+        }
+
 
         backButton.setOnClickListener{
-            val intent = Intent(this@FeesScreen, MainActivity::class.java)
+            val intent = Intent(this@FeesScreen, Homescreen::class.java)
             startActivity(intent)
         }
 
+
         totalButton.setOnClickListener {
 
-            var counter: Int = 0
 
-            if(childmindingBox.isChecked){
-                counter++
+            val discount: Double = when {
+                selectedCourses.size > 3 -> 0.85
+                selectedCourses.size == 3 -> 0.90
+                selectedCourses.size == 2 -> 0.95
+                else -> 1.0
             }
 
-            if(cookingBox.isChecked){
-                counter++
-            }
+            total = (total * discount).toInt()
 
-            if(gardenMaintenanceBox.isChecked){
-                counter++
-            }
+            totalView.text = total.toString()
+        }
 
-            if(firstAidBox.isChecked){
-                counter++
-            }
-
-            if(sewingBox.isChecked){
-                counter++
-            }
-
-            if(landscapingBox.isChecked){
-                counter++
-            }
-
-            if(lifeSkillsBox.isChecked){
-                counter++
-            }
-
-            val discount = when{
-                counter > 3 -> 0.15
-                counter == 3 -> 0.10
-                counter == 2 -> 0.5
-                else -> 0
-            }
-
-
-
-
-
+        clearButton.setOnClickListener{
+            nameEdit.setText("Enter Name")
+            numberEdit.setText("Enter Phone Number")
+            emailEdit.setText("Enter Email Address")
+            childmindingBox.isChecked = false
+            cookingBox.isChecked = false
+            gardenMaintenanceBox.isChecked = false
+            firstAidBox.isChecked = false
+            sewingBox.isChecked = false
+            landscapingBox.isChecked = false
+            lifeSkillsBox.isChecked = false
+            totalView.text = ""
         }
     }
 }

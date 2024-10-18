@@ -22,7 +22,7 @@
             android:name=".CoursesScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Homescreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

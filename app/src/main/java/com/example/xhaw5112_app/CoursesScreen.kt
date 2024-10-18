@@ -39,7 +39,7 @@ class CoursesScreen : AppCompatActivity() {
 
 
         backButton.setOnClickListener{
-            val intent = Intent(this@CoursesScreen, MainActivity::class.java)
+            val intent = Intent(this@CoursesScreen, Homescreen::class.java)
             startActivity(intent)
         }
 
