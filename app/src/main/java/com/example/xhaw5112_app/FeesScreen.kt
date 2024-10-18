@@ -144,6 +144,7 @@ class FeesScreen : AppCompatActivity() {
             landscapingBox.isChecked = false
             lifeSkillsBox.isChecked = false
             totalView.text = ""
+            total = 0
         }
     }
 }
