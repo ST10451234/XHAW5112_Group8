@@ -80,3 +80,7 @@ a:hover {
 #topnav li:hover .dropdown {
     display: block; 
 }
+
+#botnav li{
+    display: block;
+}
