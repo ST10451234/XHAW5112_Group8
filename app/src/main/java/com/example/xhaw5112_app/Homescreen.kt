@@ -24,8 +24,7 @@ class Homescreen : AppCompatActivity() {
                 "can provide more marketable skills. "
 
         contactButton.setOnClickListener{
-            val intent = Intent(this,)
-            startActivity(intent)
+
         }
 
 

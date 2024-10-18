@@ -27,8 +27,6 @@ class LifeSkillsScreen : AppCompatActivity() {
                 " • Basic numeric literacy"
 
         contactButton.setOnClickListener{
-            val intent = Intent(this,)
-            startActivity(intent)
         }
 
 

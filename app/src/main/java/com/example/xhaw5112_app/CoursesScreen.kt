@@ -44,8 +44,6 @@ class CoursesScreen : AppCompatActivity() {
         }
 
         contactButton.setOnClickListener{
-            val intent = Intent(this,)
-            startActivity(intent)
         }
 
         SixMonthCourses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

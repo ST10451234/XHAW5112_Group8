@@ -114,8 +114,6 @@ class FeesScreen : AppCompatActivity() {
         }
 
         contactButton.setOnClickListener{
-            val intent = Intent(this,)
-            startActivity(intent)
         }
 
 
