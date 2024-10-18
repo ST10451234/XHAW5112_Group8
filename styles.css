@@ -10,7 +10,7 @@ main {
     margin: 0;
     position: relative;
     color: #FFFFFF;
-    height: 300px;
+    height: 320px;
     width: auto;
 }
 
@@ -21,7 +21,7 @@ footer {
     position: relative;
     width: auto;
     height: 200px;
-    color: #FFFFFF;
+    margin-top: 0px;
 }
 
 #topnav ul {
