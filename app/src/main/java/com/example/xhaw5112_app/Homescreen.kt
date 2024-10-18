@@ -23,6 +23,11 @@ class Homescreen : AppCompatActivity() {
                 "Learnerships and six-week Short Skills Training Programmes to empower themselves and \n" +
                 "can provide more marketable skills. "
 
+        contactButton.setOnClickListener{
+            val intent = Intent(this,)
+            startActivity(intent)
+        }
+
 
         coursesButton.setOnClickListener {
             val intent = Intent(this, CoursesScreen::class.java)

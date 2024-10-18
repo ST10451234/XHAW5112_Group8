@@ -26,6 +26,11 @@ class LifeSkillsScreen : AppCompatActivity() {
                 " • Basic reading and writing literacy \n" +
                 " • Basic numeric literacy"
 
+        contactButton.setOnClickListener{
+            val intent = Intent(this,)
+            startActivity(intent)
+        }
+
 
         backButton.setOnClickListener{
             val intent = Intent(this@LifeSkillsScreen, CoursesScreen::class.java)

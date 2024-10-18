@@ -43,6 +43,11 @@ class CoursesScreen : AppCompatActivity() {
             startActivity(intent)
         }
 
+        contactButton.setOnClickListener{
+            val intent = Intent(this,)
+            startActivity(intent)
+        }
+
         SixMonthCourses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 when (position) {
