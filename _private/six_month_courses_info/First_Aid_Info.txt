@@ -1,0 +1,9 @@
+First Aid
+Fees: R1500
+Purpose: To provide first aid awareness and basic life support
+Content:
+• Wounds and bleeding
+• Burns and fractures
+• Emergency scene management
+• Cardio-Pulmonary Resuscitation (CPR)
+• Respiratory distress e.g., Choking, blocked airway
