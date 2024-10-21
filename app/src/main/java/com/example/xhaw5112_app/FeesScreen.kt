@@ -139,7 +139,7 @@ class FeesScreen : AppCompatActivity() {
             }
 
             clearButton.setOnClickListener {
-                nameEdit.setText("Enter Name")
+                nameEdit.setText("Enter Full Name")
                 numberEdit.setText("Enter Phone Number")
                 emailEdit.setText("Enter Email Address")
                 childmindingBox.isChecked = false
