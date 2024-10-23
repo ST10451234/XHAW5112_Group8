@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empowering the Nation| Fees</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <img src="_images/Logo.png" alt="Empowering_the_Nation_Logo">
@@ -23,27 +25,166 @@
                         <li><a href="">Sewing</a></li>
                         <li><a href="">Landscaping</a></li>
                         <li><a href="lifeskills.html">Life Skills</a></li>
-                    </ul>                
+                    </ul>
                 </li>
                 <li id="currentpage">Fees</li>
-                <li><a href="">Contact Us</a></li>    
+                <li><a href="">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        
+        <form id="customerForm">
+            <table>
+                <tr>
+                    <td><label for="Name">Name:</label></td>
+                    <td><input type="text" name="Name" id="Name" value="Enter Full Name" onfocus="this.value=''"></td>
+                </tr>
+                <tr>
+                    <td><label for="Number">Phone Number:</label></td>
+                    <td><input type="number" name="Number" id="Number" value="Enter Phone Number"
+                            onfocus="this.value=''"></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email:</label></td>
+                    <td><input type="email" name="Email" id="Email" value="Enter Email Address" onfocus="this.value=''">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Request Consultation" onclick="consultation()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+
+        <form id="coursesForm">
+            <table>
+                <tr id="SixWeek">
+                    <td><label for="Six Week Courses">Six Week Courses</label></td>
+                    <td>
+                        <input type="checkbox" value="Child Minding|750" name="course">Child Minding R750<br>
+                        <input type="checkbox" value="Cooking|750" name="course">Cooking R750<br>
+                        <input type="checkbox" value="Garden Maintenance|750" name="course">Garden Maintenance R750<br>
+                    </td>
+                </tr> 
+
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>                    
+
+                <tr id="SixMonth">
+                    <td><label for="Six Month Courses">Six Month Courses</label></td>
+                    <td>
+                        <input type="checkbox" value="First Aid|1500" name="course">First Aid R1500<br>
+                        <input type="checkbox" value="Sewing|1500" name="course">Sewing R1500<br>
+                        <input type="checkbox" value="Landscaping|1500" name="course">Landscaping R1500<br>
+                        <input type="checkbox" value="Life Skills|1500" name="course">Life Skills R1500<br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Clear" onclick="clearForm()">
+                        <input type="button" value="Calculate" onclick="calculateTotal()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id="totalDisplay"></div>
+
+
+        <script>
+
+            let customerDetails = []
+
+
+            function consultation() {
+                const name = document.getElementById('Name').value;
+                const phoneNumber = document.getElementById('Number').value;
+                const email = document.getElementById('Email').value;
+
+                if (name && phoneNumber && email) {
+                    const customer = {
+                        name: name,
+                        phoneNumber: phoneNumber,
+                        email: email
+                    };
+
+                    customerDetails.push(customer);
+                }
+            }
+
+
+            function calculateTotal() {
+                let checkboxes = document.querySelectorAll('input[name="course"]');
+                let total = 0;
+                let discount = 0;
+                let counter = 0;
+                let selectedCourses = [];
+                const vatRate = 0.15;
+
+
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const [course, price] = checkbox.value.split('|');
+                        total += parseFloat(price);
+                        selectedCourses.push(course);
+                        counter++;
+                    }
+                });
+
+
+                if (counter === 2) {
+                    discount = total * 0.05;
+                } else if (counter === 3) {
+                    discount = total * 0.10;
+                } else if (counter > 3) {
+                    discount = total * 0.15;
+                }
+
+                total -= discount;
+
+
+                const vat = total * vatRate;
+                total += vat;
+
+
+                let totalDisplay = document.getElementById('totalDisplay');
+                if (counter > 0) {
+                    totalDisplay.innerHTML = `
+                        <p>Total Cost: R${total.toFixed(2)}</p>
+                    `;
+                    console.log("Selected Courses:", selectedCourses);
+                } else {
+                    totalDisplay.innerHTML = '<p>No courses selected.</p>';
+                }
+            }
+
+            function clearForm() {
+                let checkboxes = document.querySelectorAll('input[name="course"]');
+                checkboxes.forEach(checkbox => checkbox.checked = false);
+                document.getElementById('totalDisplay').innerHTML = '';
+            }
+        </script>
 
     </main>
-    
+
+
     <footer>
         <nav id="botnav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li id="currentpage">Fees</li>
-                <li><a href="">Contact Us</a></li>    
+                <li><a href="">Contact Us</a></li>
             </ul>
         </nav>
     </footer>
 </body>
+
 </html>
