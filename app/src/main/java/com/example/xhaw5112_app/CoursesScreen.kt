@@ -52,6 +52,15 @@ class CoursesScreen : AppCompatActivity() {
                         Toast.makeText(this@CoursesScreen, "Please select a valid course.", Toast.LENGTH_SHORT).show()
                         SixWeekCourses.setSelection(0)
                     }
+                    1->{
+
+                    }
+                    2->{
+
+                    }
+                    3->{
+
+                    }
                     4-> {
                         val intent = Intent(this@CoursesScreen, LifeSkillsScreen::class.java)
                         startActivity(intent)
@@ -70,6 +79,18 @@ class CoursesScreen : AppCompatActivity() {
                     0->{
                         Toast.makeText(this@CoursesScreen, "Please select a valid course.", Toast.LENGTH_SHORT).show()
                         SixWeekCourses.setSelection(0)
+                    }
+                    1->{
+
+                    }
+                    2->{
+
+                    }
+                    3->{
+
+                    }
+                    4->{
+
                     }
 
                 }
