@@ -26,8 +26,6 @@ class LifeSkillsScreen : AppCompatActivity() {
                 " • Basic reading and writing literacy \n" +
                 " • Basic numeric literacy"
 
-        contactButton.setOnClickListener{
-        }
 
 
         backButton.setOnClickListener{

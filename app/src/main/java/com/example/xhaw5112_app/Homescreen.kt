@@ -23,9 +23,7 @@ class Homescreen : AppCompatActivity() {
                 "Learnerships and six-week Short Skills Training Programmes to empower themselves and \n" +
                 "can provide more marketable skills. "
 
-        contactButton.setOnClickListener{
 
-        }
 
 
         coursesButton.setOnClickListener {

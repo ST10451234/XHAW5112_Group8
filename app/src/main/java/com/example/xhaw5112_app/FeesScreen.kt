@@ -47,7 +47,10 @@ class FeesScreen : AppCompatActivity() {
         val landscapingPrice: Int = 1500
         val lifeSkillsPrice: Int = 1500
         var total: Int = 0
-        var vat: Double = 0.85
+        var vat: Double = 0.15
+        var discountedamount: Int = 0
+        var taxedamount: Int = 0
+
 
         data class Customer(val name: String, val number: String, val email: String)
 
@@ -117,23 +120,24 @@ class FeesScreen : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            contactButton.setOnClickListener {
-            }
-
-
             totalButton.setOnClickListener {
 
 
-                val discount: Double = when {
-                    selectedCourses.size > 3 -> 0.85
-                    selectedCourses.size == 3 -> 0.90
-                    selectedCourses.size == 2 -> 0.95
+                val discountpercent: Double = when {
+                    selectedCourses.size > 3 -> 0.15
+                    selectedCourses.size == 3 -> 0.10
+                    selectedCourses.size == 2 -> 0.05
                     else -> 1.0
                 }
 
-                total = (total * discount).toInt()
+                discountedamount = (total * discountpercent).toInt()
 
-                total = (total * vat).toInt()
+                total = (total - discountedamount)
+
+                taxedamount = (total * vat).toInt()
+
+                total = (taxedamount + total)
+
 
                 totalView.text = total.toString()
             }
