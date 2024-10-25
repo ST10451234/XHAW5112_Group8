@@ -12,6 +12,7 @@ main {
     color: #FFFFFF;
     height: 320px;
     width: auto;
+    font-size: 20px;
 }
 
 footer {
@@ -22,6 +23,8 @@ footer {
     width: auto;
     height: 200px;
     margin-top: 0px;
+    text-align: center;
+    padding: 1%;
 }
 
 #topnav ul {
@@ -82,7 +85,7 @@ a:hover {
 }
 
 #botnav li{
-    display: block;
+    display: inline-block;
 }
 
 #customerForm{
