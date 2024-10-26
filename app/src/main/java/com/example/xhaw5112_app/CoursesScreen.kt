@@ -43,6 +43,13 @@ class CoursesScreen : AppCompatActivity() {
             startActivity(intent)
         }
 
+        contactButton.setOnClickListener{
+            val intent =Intent(this@CoursesScreen, ContactScreen::class.java)
+            startActivity(intent)
+        }
+
+
+
 
 
         SixMonthCourses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -50,15 +57,21 @@ class CoursesScreen : AppCompatActivity() {
                 when (position) {
                     0->{
                         Toast.makeText(this@CoursesScreen, "Please select a valid course.", Toast.LENGTH_SHORT).show()
-                        SixWeekCourses.setSelection(0)
+                        SixMonthCourses.setSelection(0)
                     }
                     1->{
+                        val intent = Intent(this@CoursesScreen, FirstAidScreen::class.java)
+                        startActivity(intent)
 
                     }
                     2->{
+                        val intent= Intent(this@CoursesScreen, SewingScreen::class.java)
+                        startActivity(intent)
 
                     }
                     3->{
+                        val intent= Intent(this@CoursesScreen, LandscapingScreen::class.java)
+                        startActivity(intent)
 
                     }
                     4-> {
@@ -81,18 +94,20 @@ class CoursesScreen : AppCompatActivity() {
                         SixWeekCourses.setSelection(0)
                     }
                     1->{
+                        val intent = Intent(this@CoursesScreen, ChildMindingScreen::class.java)
+                        startActivity(intent)
 
                     }
                     2->{
-
+                        val intent = Intent(this@CoursesScreen, CookingScreen::class.java)
+                        startActivity(intent)
                     }
                     3->{
+                        val intent = Intent(this@CoursesScreen, GardenMaintenanceScreen::class.java)
+                        startActivity(intent)
 
                     }
-                    4->{
-
-                    }
-
+                    
                 }
             }
 

@@ -15,7 +15,7 @@ class LifeSkillsScreen : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.backButton)
         val contactButton = findViewById<Button>(R.id.contactButton)
 
-        val lifeSkillsView = findViewById<TextView>(R.id.lifeSkillsView)
+        val lifeSkillsView = findViewById<TextView>(R.id.view)
 
         lifeSkillsView.text = "Life Skills\n" +
             "Fees: R1500\n" +
@@ -32,5 +32,11 @@ class LifeSkillsScreen : AppCompatActivity() {
             val intent = Intent(this@LifeSkillsScreen, CoursesScreen::class.java)
             startActivity(intent)
         }
+
+        contactButton.setOnClickListener{
+            val intent =Intent(this@LifeSkillsScreen, ContactScreen::class.java)
+            startActivity(intent)
+        }
+
     }
 }

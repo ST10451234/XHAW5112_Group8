@@ -120,7 +120,15 @@ class FeesScreen : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            totalButton.setOnClickListener {
+        contactButton.setOnClickListener{
+            val intent =Intent(this@FeesScreen, ContactScreen::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+        totalButton.setOnClickListener {
 
 
                 val discountpercent: Double = when {

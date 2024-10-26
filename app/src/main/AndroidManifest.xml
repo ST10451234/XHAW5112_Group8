@@ -13,6 +13,27 @@
         android:theme="@style/Theme.XHAW5112_APP"
         tools:targetApi="31">
         <activity
+            android:name=".FirstAidScreen"
+            android:exported="false" />
+        <activity
+            android:name=".GardenMaintenanceScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CookingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ChildMindingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ContactScreen"
+            android:exported="false" />
+        <activity
+            android:name=".LandscapingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SewingScreen"
+            android:exported="false" />
+        <activity
             android:name=".LifeSkillsScreen"
             android:exported="false" />
         <activity

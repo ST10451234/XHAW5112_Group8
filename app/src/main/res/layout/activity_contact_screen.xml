@@ -5,20 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CFECFA"
-    tools:context=".LifeSkillsScreen" >
-
-    <Button
-        android:id="@+id/contactButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#BD3B36"
-        android:text="Contact"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    tools:context=".ContactScreen">
 
     <Button
         android:id="@+id/backButton"
@@ -47,16 +34,16 @@
         app:srcCompat="@drawable/xhaw5112_logo" />
 
     <TextView
-        android:id="@+id/view"
-        android:layout_width="372dp"
-        android:layout_height="602dp"
+        android:id="@+id/contactinfo"
+        android:layout_width="360dp"
+        android:layout_height="282dp"
         android:background="#1D4BDD"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.219" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
