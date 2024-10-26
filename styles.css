@@ -10,7 +10,7 @@ main {
     margin: 0;
     position: relative;
     color: #FFFFFF;
-    height: 320px;
+    height: auto;
     width: auto;
     font-size: 20px;
 }
